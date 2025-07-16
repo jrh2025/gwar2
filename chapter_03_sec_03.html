@@ -64,6 +64,178 @@
             font-style: italic;
         }
     </style>
+<style>
+        /* --- 原始樣式 --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "Helvetica Neue", "Arial", sans-serif;
+            line-height: 1.8;
+            background-color: #fdfdfd;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.4s, color 0.4s; /* 平滑過渡效果 */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: background-color 0.4s, box-shadow 0.4s;
+        }
+        h1, h2, h3 {
+            color: #1a1a1a;
+            border-left: 5px solid #a08c7d;
+            padding-left: 15px;
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            transition: color 0.4s, border-color 0.4s;
+        }
+        p, ul, li, blockquote {
+            font-size: 1.05em;
+        }
+        .nav {
+            text-align: center;
+            margin: 2em 0;
+            font-size: 1.1em;
+            padding: 1em 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            transition: border-color 0.4s;
+        }
+        .nav a {
+            color: #6a5acd;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav a:hover {
+            background-color: #f0e6ff;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 3em 0;
+            transition: background-color 0.4s;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            transition: color 0.4s, border-color 0.4s;
+        }
+
+        /* --- 夜間模式樣式 (Dark Mode) --- */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #c7c7c7;
+        }
+        .dark-mode .container {
+            background-color: #2c2c2c;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .dark-mode h1, .dark-mode h2, .dark-mode h3 {
+            color: #e0e0e0;
+            border-left-color: #7a6a5d;
+        }
+        .dark-mode .nav {
+            border-top-color: #444;
+            border-bottom-color: #444;
+        }
+        .dark-mode .nav a {
+            color: #9d8aff;
+        }
+        .dark-mode .nav a:hover {
+            background-color: #3a305e;
+        }
+        .dark-mode hr {
+            background: #555;
+        }
+        .dark-mode blockquote {
+            border-left-color: #555;
+            color: #a0a0a0;
+        }
+
+        /* --- 沉浸模式樣式 (Immersive Mode) --- */
+        body.immersive-mode {
+            font-family: "Noto Serif TC", "Source Han Serif TC", "Songti TC", "STSong", "SimSun", serif;
+            background-color: #f5f2ebd0;
+        }
+        .immersive-mode .container {
+            max-width: 720px;
+            box-shadow: none;
+            padding: 4rem 2rem;
+        }
+        .immersive-mode p, .immersive-mode ul, .immersive-mode li, .immersive-mode blockquote {
+            font-size: 1.15em;
+            line-height: 2;
+        }
+        .immersive-mode .nav, .immersive-mode header > .nav, .immersive-mode h1, .immersive-mode h2, .immersive-mode h3, .immersive-mode hr {
+            opacity: 0.6;
+            transition: opacity 0.4s;
+        }
+        .immersive-mode .container:hover .nav, .immersive-mode .container:hover header > .nav, .immersive-mode .container:hover h1, .immersive-mode .container:hover h2, .immersive-mode .container:hover h3, .immersive-mode .container:hover hr {
+            opacity: 1;
+        }
+
+        /* --- 樣式切換器 --- */
+        .theme-switcher {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 5px;
+            display: flex;
+            gap: 5px;
+        }
+        .dark-mode .theme-switcher {
+            background-color: rgba(44, 44, 44, 0.8);
+        }
+        .theme-switcher button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+        .dark-mode .theme-switcher button {
+            color: #eee;
+        }
+        .theme-switcher button:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .dark-mode .theme-switcher button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .theme-switcher button.active {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+        .dark-mode .theme-switcher button.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -107,5 +279,54 @@
             </nav>
         </footer>
     </div>
+<div class="theme-switcher">
+        <button id="theme-default" title="預設模式">☀️</button>
+        <button id="theme-dark" title="夜間模式">🌙</button>
+        <button id="theme-immersive" title="沉浸模式">📖</button>
+    </div>
+
+    <script>
+    // --- JavaScript for Theme Switching ---
+    document.addEventListener('DOMContentLoaded', () => {
+        const body = document.body;
+        const themeDefaultBtn = document.getElementById('theme-default');
+        const themeDarkBtn = document.getElementById('theme-dark');
+        const themeImmersiveBtn = document.getElementById('theme-immersive');
+        const buttons = [themeDefaultBtn, themeDarkBtn, themeImmersiveBtn];
+
+        const setTheme = (theme) => {
+            body.classList.remove('dark-mode', 'immersive-mode');
+            if (theme === 'dark') {
+                body.classList.add('dark-mode');
+            } else if (theme === 'immersive') {
+                body.classList.add('immersive-mode');
+            }
+            updateActiveButton(theme);
+            localStorage.setItem('readingTheme', theme);
+        };
+
+        const updateActiveButton = (theme) => {
+            buttons.forEach(button => button.classList.remove('active'));
+            if (theme === 'dark') {
+                themeDarkBtn.classList.add('active');
+            } else if (theme === 'immersive') {
+                themeImmersiveBtn.classList.add('active');
+            } else {
+                themeDefaultBtn.classList.add('active');
+            }
+        };
+
+        themeDefaultBtn.addEventListener('click', () => setTheme('default'));
+        themeDarkBtn.addEventListener('click', () => setTheme('dark'));
+        themeImmersiveBtn.addEventListener('click', () => setTheme('immersive'));
+
+        const savedTheme = localStorage.getItem('readingTheme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            setTheme('default');
+        }
+    });
+    </script>
 </body>
 </html>
