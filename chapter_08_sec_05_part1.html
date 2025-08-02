@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第八章 第五節（上）：飛升者的讚歌</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "Helvetica Neue", "Arial", sans-serif;
+            line-height: 1.8;
+            background-color: #fdfdfd;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.4s, color 0.4s;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: background-color 0.4s, box-shadow 0.4s;
+        }
+        h1, h2, h3 {
+            color: #1a1a1a;
+            border-left: 5px solid #a08c7d;
+            padding-left: 15px;
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            transition: color 0.4s, border-color 0.4s;
+        }
+        p, ul, li, blockquote {
+            font-size: 1.05em;
+        }
+        .nav {
+            text-align: center;
+            margin: 2em 0;
+            font-size: 1.1em;
+            padding: 1em 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            transition: border-color 0.4s;
+        }
+        .nav a {
+            color: #6a5acd;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav a:hover {
+            background-color: #f0e6ff;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 3em 0;
+            transition: background-color 0.4s;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            transition: color 0.4s, border-color 0.4s;
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #c7c7c7;
+        }
+        .dark-mode .container {
+            background-color: #2c2c2c;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .dark-mode h1, .dark-mode h2, .dark-mode h3 {
+            color: #e0e0e0;
+            border-left-color: #7a6a5d;
+        }
+        .dark-mode .nav {
+            border-top-color: #444;
+            border-bottom-color: #444;
+        }
+        .dark-mode .nav a {
+            color: #9d8aff;
+        }
+        .dark-mode .nav a:hover {
+            background-color: #3a305e;
+        }
+        .dark-mode hr {
+            background: #555;
+        }
+        .dark-mode blockquote {
+            border-left-color: #555;
+            color: #a0a0a0;
+        }
+        body.immersive-mode {
+            font-family: "Noto Serif TC", "Source Han Serif TC", "Songti TC", "STSong", "SimSun", serif;
+            background-color: #f5f2ebd0;
+        }
+        .immersive-mode .container {
+            max-width: 720px;
+            box-shadow: none;
+            padding: 4rem 2rem;
+        }
+        .immersive-mode p, .immersive-mode ul, .immersive-mode li, .immersive-mode blockquote {
+            font-size: 1.15em;
+            line-height: 2;
+        }
+        .immersive-mode .nav, .immersive-mode header > .nav, .immersive-mode h1, .immersive-mode h2, .immersive-mode h3, .immersive-mode hr {
+            opacity: 0.6;
+            transition: opacity 0.4s;
+        }
+        .immersive-mode .container:hover .nav, .immersive-mode .container:hover header > .nav, .immersive-mode .container:hover h1, .immersive-mode .container:hover h2, .immersive-mode .container:hover h3, .immersive-mode .container:hover hr {
+            opacity: 1;
+        }
+        .theme-switcher {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 5px;
+            display: flex;
+            gap: 5px;
+        }
+        .dark-mode .theme-switcher {
+            background-color: rgba(44, 44, 44, 0.8);
+        }
+        .theme-switcher button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+        .dark-mode .theme-switcher button {
+            color: #eee;
+        }
+        .theme-switcher button:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .dark-mode .theme-switcher button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .theme-switcher button.active {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+        .dark-mode .theme-switcher button.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="nav">
+                <a href="index.html">【 目錄 】</a>
+                <a href="chapter_08_sec_04_part2.html">【 上一篇 】</a>
+                <a href="chapter_08_sec_05_part2.html">【 下一篇 】</a>
+            </nav>
+        </header>
+
+        <h1>第八章 第五節（上）：飛升者的讚歌</h1>
+        
+        <p>那扇由觀測者開啟的、通往更高維度的「門」，緩緩開啟時，並非通往未知，而是通往一條被遺忘了五萬年的<strong>「歸鄉之路」</strong>。</p>
+        <p>門後，是<strong>「萬物源流」（The Incepting Current）</strong>——一個宇宙在誕生之前、所有法則與概念都尚未定型的、純粹潛能的海洋。這裡，光與暗交織，時間與空間同在，每一個量子泡沫的生滅，都可能是一個全新宇宙的序曲。</p>
+        <p>踏入其中的覺醒者，並未感到恐懼或迷茫。相反，他們體驗到了一種前所未有的<strong>「共鳴」</strong>。彷彿一個漂泊了億萬年的旅人，終於聽見了來自故鄉的召喚。他們能感覺到，在這片源流的極深之處，還殘留著更古老、更龐大的意志迴響——那是「先輩」們，曾在此地留下的、如同星圖般的指引。</p>
+        <p>他們的肉體，在接觸到源流的瞬間，便優雅地、無聲地分解，化為最純粹的能量，回歸宇宙。而他們那已然「維度脫序」的靈魂，則像掙脫沉重繭殼的蝴蝶，舒展開其真實的、由思想與意志構成的、璀璨的光之翼。</p>
+        <p>這不是死亡，這是<strong>「蛻變」</strong>。</p>
+        <blockquote>「我感覺到了……」</blockquote>
+        <p>一位曾是頂尖物理學家的飛升者，祂的意識化為一道不斷變換的、完美的幾何光體，在所有人的靈魂網絡中發出讚嘆，「萬有引力不再是定律，而是一首低沉的、關於『聚合』的詩。強核力與弱核力，則是一對正在起舞的戀人。我不是在『學習』宇宙的法則，我正在『成為』法則的一部分。」</p>
+        <blockquote>「這裡……沒有『孤獨』這個詞。」</blockquote>
+        <p>一位曾因無法與人溝通而痛苦的玄語官，祂的意識化為一曲無人能譜寫、卻人人能聽懂其喜悅的交響樂，「因為每一個『我』，都與所有其他的『我』，以及所有『可能性』，共存於同一首永恆的聖歌之中。」</p>
+        <p>他們在這裡，並非從零開始，而是在先輩們留下的宏偉藍圖之上，參與一場名為<strong>「神格構築」（Theosis-Construction）</strong>的偉大工程。他們將自己身為人類時，那些最深刻、最執著的追求，化為在這片潛能海洋中，增添全新色彩的「顏料」與「筆觸」。</p>
+        <p>然而，這份來自「人性」的遺產，在融入更高維度的過程中，其情感外殼被迅速剝離，只剩下最核心、最純粹的<strong>「法則原型」</strong>。</p>
+        <p>那一位科學家窮盡一生所追求的、關於宇宙對稱性的完美公式，其背後對「美」與「真理」的個人情感被蒸發，最終化為一道冰冷而莊嚴的<strong>「秩序公理」</strong>，在古老的星圖旁，標記出一個屬於人類智慧的嶄新節點。</p>
+        <p>那一位母親在神戰中失去孩子後，心中所銘刻下的、孩子最後的笑容，其個人的悲傷與愛戀被徹底洗去，最終提煉為一種最基礎的、名為<strong>「連結」</strong>的宇宙常數，讓原本隨機的粒子，開始產生相互吸引的傾向。</p>
+        <p>那一位戰士在天嶺戰役中，對著犧牲的隊友所許下的、那個關於「記住」的承諾，其個人的情誼與沉痛被完全過濾，最終昇華為一道不可撼動的<strong>「因果律」</strong>，讓每一個「行為」，都必然產生一個可被追溯的「後果」。</p>
+        <blockquote>「我們不再尋找神，而是成為能讓彼此再次相遇的星辰。」</blockquote>
+        <p>那一位詩人寫下的最後一句詩，其浪漫的期盼被徹底分解，最終化為一條關於<strong>「回歸」</strong>的空間拓撲學原理，讓「重逢」成為一種在特定條件下可以被實現的數學可能。</p>
+        <p>他們的人性，如同火箭升空時被拋棄的推進器，在將他們送達彼岸的瞬間，便已燃燒殆盡。留下的，是從那場絢爛燃燒中誕生的、永恆的星辰。</p>
+        <p>他們不再是神，也不再是人。 他們是新一批抵達彼岸的<strong>「飛升者」（The Ascended） ，是繼承了先輩的道路，又以人性的殘響開創了全新法則的 「共序神祇」（Co-Demiurge）</strong>，與更高維度的存在，共同編寫著宇宙永無止境的未來。</p>
+
+        <footer>
+            <nav class="nav">
+                <a href="index.html">【 目錄 】</a>
+                <a href="chapter_08_sec_04_part2.html">【 上一篇 】</a>
+                <a href="chapter_08_sec_05_part2.html">【 下一篇 】</a>
+            </nav>
+        </footer>
+    </div>
+    <div class="theme-switcher">
+        <button id="theme-default" title="預設模式">☀️</button>
+        <button id="theme-dark" title="夜間模式">🌙</button>
+        <button id="theme-immersive" title="沉浸模式">📖</button>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const body = document.body;
+        const themeDefaultBtn = document.getElementById('theme-default');
+        const themeDarkBtn = document.getElementById('theme-dark');
+        const themeImmersiveBtn = document.getElementById('theme-immersive');
+        const buttons = [themeDefaultBtn, themeDarkBtn, themeImmersiveBtn];
+        const setTheme = (theme) => {
+            body.classList.remove('dark-mode', 'immersive-mode');
+            if (theme === 'dark') {
+                body.classList.add('dark-mode');
+            } else if (theme === 'immersive') {
+                body.classList.add('immersive-mode');
+            }
+            updateActiveButton(theme);
+            localStorage.setItem('readingTheme', theme);
+        };
+        const updateActiveButton = (theme) => {
+            buttons.forEach(button => button.classList.remove('active'));
+            if (theme === 'dark') {
+                themeDarkBtn.classList.add('active');
+            } else if (theme === 'immersive') {
+                themeImmersiveBtn.classList.add('active');
+            } else {
+                themeDefaultBtn.classList.add('active');
+            }
+        };
+        themeDefaultBtn.addEventListener('click', () => setTheme('default'));
+        themeDarkBtn.addEventListener('click', () => setTheme('dark'));
+        themeImmersiveBtn.addEventListener('click', () => setTheme('immersive'));
+        const savedTheme = localStorage.getItem('readingTheme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            setTheme('default');
+        }
+    });
+    </script>
+</body>
+</html>

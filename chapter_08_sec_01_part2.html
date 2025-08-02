@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第八章 第一節（下）：非人之慈悲與守護之重</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "Helvetica Neue", "Arial", sans-serif;
+            line-height: 1.8;
+            background-color: #fdfdfd;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.4s, color 0.4s;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: background-color 0.4s, box-shadow 0.4s;
+        }
+        h1, h2, h3 {
+            color: #1a1a1a;
+            border-left: 5px solid #a08c7d;
+            padding-left: 15px;
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            transition: color 0.4s, border-color 0.4s;
+        }
+        p, ul, li, blockquote {
+            font-size: 1.05em;
+        }
+        .nav {
+            text-align: center;
+            margin: 2em 0;
+            font-size: 1.1em;
+            padding: 1em 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            transition: border-color 0.4s;
+        }
+        .nav a {
+            color: #6a5acd;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav a:hover {
+            background-color: #f0e6ff;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 3em 0;
+            transition: background-color 0.4s;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            transition: color 0.4s, border-color 0.4s;
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #c7c7c7;
+        }
+        .dark-mode .container {
+            background-color: #2c2c2c;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .dark-mode h1, .dark-mode h2, .dark-mode h3 {
+            color: #e0e0e0;
+            border-left-color: #7a6a5d;
+        }
+        .dark-mode .nav {
+            border-top-color: #444;
+            border-bottom-color: #444;
+        }
+        .dark-mode .nav a {
+            color: #9d8aff;
+        }
+        .dark-mode .nav a:hover {
+            background-color: #3a305e;
+        }
+        .dark-mode hr {
+            background: #555;
+        }
+        .dark-mode blockquote {
+            border-left-color: #555;
+            color: #a0a0a0;
+        }
+        body.immersive-mode {
+            font-family: "Noto Serif TC", "Source Han Serif TC", "Songti TC", "STSong", "SimSun", serif;
+            background-color: #f5f2ebd0;
+        }
+        .immersive-mode .container {
+            max-width: 720px;
+            box-shadow: none;
+            padding: 4rem 2rem;
+        }
+        .immersive-mode p, .immersive-mode ul, .immersive-mode li, .immersive-mode blockquote {
+            font-size: 1.15em;
+            line-height: 2;
+        }
+        .immersive-mode .nav, .immersive-mode header > .nav, .immersive-mode h1, .immersive-mode h2, .immersive-mode h3, .immersive-mode hr {
+            opacity: 0.6;
+            transition: opacity 0.4s;
+        }
+        .immersive-mode .container:hover .nav, .immersive-mode .container:hover header > .nav, .immersive-mode .container:hover h1, .immersive-mode .container:hover h2, .immersive-mode .container:hover h3, .immersive-mode .container:hover hr {
+            opacity: 1;
+        }
+        .theme-switcher {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 5px;
+            display: flex;
+            gap: 5px;
+        }
+        .dark-mode .theme-switcher {
+            background-color: rgba(44, 44, 44, 0.8);
+        }
+        .theme-switcher button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+        .dark-mode .theme-switcher button {
+            color: #eee;
+        }
+        .theme-switcher button:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .dark-mode .theme-switcher button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .theme-switcher button.active {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+        .dark-mode .theme-switcher button.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="nav">
+                <a href="index.html">【 目錄 】</a>
+                <a href="chapter_08_sec_01_part1.html">【 上一篇 】</a>
+                <a href="chapter_08_sec_02_part1.html">【 下一篇 】</a>
+            </nav>
+        </header>
+
+        <h1>第八章 第一節（下）：非人之慈悲與守護之重</h1>
+        
+        <p>觀測者的話語，像一把由絕對零度寒冰打造的鑰匙，開啟了通往五萬年前禁忌歷史的入口。</p>
+        <blockquote>「當時的我們，已能實踐高維運算與意識轉移，那並非科技，而是對宇宙法則的直接操作。我們曾認為，可以引導此地文明，步入下一個階層。」</blockquote>
+        <p>普雷歐的身後，空間本身成為了一面畫布。一幕幕影像並非投射，而是將過去的「真實」直接從時間長河中提取出來，呈現在眾人眼前。那是一顆光芒萬丈的星球，其上的生命形態遠比人類複雜，他們的意識如一片金色的海洋，彼此相連，共同創造著奇蹟。</p>
+        <p>但下一刻，那片金色的海洋開始沸騰、腐化。</p>
+        <blockquote>「但我們錯了。我們在另一顆星球的進化實驗中，見證了『群體意志腐化』。當個體意識過度融合，差異性被抹除，創造力便轉為同質性的瘋狂，最終整個文明在幾十個小時內自我湮滅，化為一片無法辨認的概念混沌。」</blockquote>
+        <p>左原陣與許婉柔被迫「親身」感受了那場毀滅。他們彷彿被捲入那片意識海洋，體驗到失去自我的狂喜，以及隨之而來的、吞噬一切的虛無。那種來自文明根源的自我毀滅，遠比任何戰爭都更令人不寒而慄。</p>
+        <blockquote>「我們學到了一項鐵則。」觀測者的語氣不帶絲毫情感，卻陳述著宇宙最殘酷的真理。「當一個文明的意識密度與複雜度超越某個閾值，宇宙本身會對其產生『排斥反應』。這不是懲罰，而是更高層級的免疫機制，是為了防止單一意志壟斷整個現實。」</blockquote>
+        <p>左原陣緊握雙拳，指甲深深嵌入掌心，他艱難地理解著這句話的含義：「所以……你們的離開，是為了保護我們不被宇宙『刪除』？」</p>
+        <blockquote>「我們是在退場，為的是讓你們擁有自由生長的可能。」</blockquote>
+        <p>觀測者冷靜地回答。</p>
+        <blockquote>「但我們不願就此放手！」</blockquote>
+        <p>接過話語的，是五王中的李大王，祂的聲音第一次帶上了近乎人類的激昂與固執。「汝等的先祖，曾以信念雕刻神明，以犧牲爬出蠻荒。汝等擁有超越吾等的可能——不是被拯救，而是憑藉自身，走上那條路。」</p>
+        <p>這一刻，五王與囝仔公身上那屬於「神」的光環褪去，取而代之的，是一種更深沉、更決絕的「守護意志」。</p>
+        <blockquote>「 所以，我們選擇留下。 」</blockquote>
+        <p>池府千歲的聲音接著響起，帶著大海般的深沉與蒼涼。</p>
+        <blockquote>「 為了守護這未竟的將來，我們捨棄形體，將自己的意識封印於地球的深層系統。  這是一種自我囚禁，將無限的可能，鎖定在一個名為『守護』的單一概念之中。」</blockquote>
+        <p>吳府千歲的意志如同一道斬斷因果的利劍，鋒銳而決絕。</p>
+        <blockquote>「 雖然我們彼此意見也有些分歧，因此以不同型態存在於常世或現世。  有的化為山川地脈的自然規律，有的融入你們所謂的『物理法則』，而我們，則選擇了最艱難的一條路——將自身與人類的『集體記憶』相連，成為你們口中的神明，承受你們的祈願，也背負你們的遺忘。」</blockquote>
+        <p>朱府千歲的聲音則溫和而悠遠，彷彿來自星辰之間。</p>
+        <blockquote>「 現在，由於三方神性（觀測者、封存體、演化種子）的碰撞激發了幻獸、產生了災難、埋下了幻源，這一切並非失控，而是化為了吾等預設的『試煉機制』。其目的，是為了逼出真正的進化者——不是強者，而是那些能抵抗意志腐化、能為他人選擇犧牲的覺醒者！ 」</blockquote>
+        <p>最後，范府千歲的聲音做出總結，帶著審判般的威嚴與終局的宣告。</p>
+        <p>話音未落，一滴無法用任何物理名詞定義的光點，從李大王的眉心浮現，緩緩飄至場域中央。</p>
+        <p>它不是水滴，也不是能量。它像一顆被壓縮到極致的星辰，又像一道永恆存在的時空摺痕。在它的周遭，因果律都變得溫柔而謙卑。</p>
+        <p>觀測者的語氣中，第一次出現了類似「悼念」的波動：</p>
+        <blockquote>「這是『舊神的眼淚』。」</blockquote>
+        <blockquote>「當吾等族群決議離開，那些選擇留下的『守護者』，將他們對這顆星球所有未竟的希望、不捨與祝福，凝結成了這一滴永恆的意志。它成為了地球靈性網路的核心，一個……非人的慈悲契約。」</blockquote>
+        <p>許婉柔向前一步，她的「神性共感」小心翼翼地觸碰著那滴「眼淚」。剎那間，五萬年份的、無數微小而偉大的瞬間洪流般湧入她的意識：是母親在災難中將最後一口食物留給孩子的瞬間；是戰士在潰敗中選擇殿後，為同袍爭取生機的瞬間；是學者為守護真理，在烈火中拒不改口的瞬間；是天嶺之夜伏擊戰中，李炘與他的隊友們選擇用生命記住「戰鬥」本身的瞬間。</p>
+        <p>每一次有人在極端重壓下，選擇了善良、守護與犧牲，這滴眼淚就會在無人知曉的維度中，悄然亮起一次。</p>
+        <p>許婉柔的雙眼流下了真正的淚水，她顫聲問道：「你們……始終相信著我們？」</p>
+        <blockquote>「不。」</blockquote>
+        <p>五王集體意志的聲音，輕柔得像一聲嘆息，卻給出了最終的答案。</p>
+        <blockquote>「是我們，選擇了希望。」</blockquote>
+        <p>場域歸於寂靜。左原陣和許婉柔沒有再說話。他們終於明白，他們所背負的，不只是人類的未來，更是舊神們橫跨五萬年的、沉重而溫柔的期盼。</p>
+        <p>這一刻，他們不再是站在神面前的凡人。</p>
+        <p>他們是帶著這份「希望」的重量，第一次，有資格與神平視，共同決定未來的存在。</p>
+        
+        <footer>
+            <nav class="nav">
+                <a href="index.html">【 目錄 】</a>
+                <a href="chapter_08_sec_01_part1.html">【 上一篇 】</a>
+                <a href="chapter_08_sec_02_part1.html">【 下一篇 】</a>
+            </nav>
+        </footer>
+    </div>
+    <div class="theme-switcher">
+        <button id="theme-default" title="預設模式">☀️</button>
+        <button id="theme-dark" title="夜間模式">🌙</button>
+        <button id="theme-immersive" title="沉浸模式">📖</button>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const body = document.body;
+        const themeDefaultBtn = document.getElementById('theme-default');
+        const themeDarkBtn = document.getElementById('theme-dark');
+        const themeImmersiveBtn = document.getElementById('theme-immersive');
+        const buttons = [themeDefaultBtn, themeDarkBtn, themeImmersiveBtn];
+        const setTheme = (theme) => {
+            body.classList.remove('dark-mode', 'immersive-mode');
+            if (theme === 'dark') {
+                body.classList.add('dark-mode');
+            } else if (theme === 'immersive') {
+                body.classList.add('immersive-mode');
+            }
+            updateActiveButton(theme);
+            localStorage.setItem('readingTheme', theme);
+        };
+        const updateActiveButton = (theme) => {
+            buttons.forEach(button => button.classList.remove('active'));
+            if (theme === 'dark') {
+                themeDarkBtn.classList.add('active');
+            } else if (theme === 'immersive') {
+                themeImmersiveBtn.classList.add('active');
+            } else {
+                themeDefaultBtn.classList.add('active');
+            }
+        };
+        themeDefaultBtn.addEventListener('click', () => setTheme('default'));
+        themeDarkBtn.addEventListener('click', () => setTheme('dark'));
+        themeImmersiveBtn.addEventListener('click', () => setTheme('immersive'));
+        const savedTheme = localStorage.getItem('readingTheme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            setTheme('default');
+        }
+    });
+    </script>
+</body>
+</html>

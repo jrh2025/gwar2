@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第八章 第一節（上）：結界彼端 · 神之哀慟</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "Helvetica Neue", "Arial", sans-serif;
+            line-height: 1.8;
+            background-color: #fdfdfd;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.4s, color 0.4s;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: background-color 0.4s, box-shadow 0.4s;
+        }
+        h1, h2, h3 {
+            color: #1a1a1a;
+            border-left: 5px solid #a08c7d;
+            padding-left: 15px;
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            transition: color 0.4s, border-color 0.4s;
+        }
+        p, ul, li, blockquote {
+            font-size: 1.05em;
+        }
+        .nav {
+            text-align: center;
+            margin: 2em 0;
+            font-size: 1.1em;
+            padding: 1em 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            transition: border-color 0.4s;
+        }
+        .nav a {
+            color: #6a5acd;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav a:hover {
+            background-color: #f0e6ff;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 3em 0;
+            transition: background-color 0.4s;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            transition: color 0.4s, border-color 0.4s;
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #c7c7c7;
+        }
+        .dark-mode .container {
+            background-color: #2c2c2c;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .dark-mode h1, .dark-mode h2, .dark-mode h3 {
+            color: #e0e0e0;
+            border-left-color: #7a6a5d;
+        }
+        .dark-mode .nav {
+            border-top-color: #444;
+            border-bottom-color: #444;
+        }
+        .dark-mode .nav a {
+            color: #9d8aff;
+        }
+        .dark-mode .nav a:hover {
+            background-color: #3a305e;
+        }
+        .dark-mode hr {
+            background: #555;
+        }
+        .dark-mode blockquote {
+            border-left-color: #555;
+            color: #a0a0a0;
+        }
+        body.immersive-mode {
+            font-family: "Noto Serif TC", "Source Han Serif TC", "Songti TC", "STSong", "SimSun", serif;
+            background-color: #f5f2ebd0;
+        }
+        .immersive-mode .container {
+            max-width: 720px;
+            box-shadow: none;
+            padding: 4rem 2rem;
+        }
+        .immersive-mode p, .immersive-mode ul, .immersive-mode li, .immersive-mode blockquote {
+            font-size: 1.15em;
+            line-height: 2;
+        }
+        .immersive-mode .nav, .immersive-mode header > .nav, .immersive-mode h1, .immersive-mode h2, .immersive-mode h3, .immersive-mode hr {
+            opacity: 0.6;
+            transition: opacity 0.4s;
+        }
+        .immersive-mode .container:hover .nav, .immersive-mode .container:hover header > .nav, .immersive-mode .container:hover h1, .immersive-mode .container:hover h2, .immersive-mode .container:hover h3, .immersive-mode .container:hover hr {
+            opacity: 1;
+        }
+        .theme-switcher {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 5px;
+            display: flex;
+            gap: 5px;
+        }
+        .dark-mode .theme-switcher {
+            background-color: rgba(44, 44, 44, 0.8);
+        }
+        .theme-switcher button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+        .dark-mode .theme-switcher button {
+            color: #eee;
+        }
+        .theme-switcher button:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .dark-mode .theme-switcher button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .theme-switcher button.active {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+        .dark-mode .theme-switcher button.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="nav">
+                <a href="index.html">【 目錄 】</a>
+                <a href="chapter_07_sec_06_part2.html">【 上一篇 】</a>
+                <a href="chapter_08_sec_01_part2.html">【 下一篇 】</a>
+            </nav>
+        </header>
+        <h1>第八章：結界彼端</h1>
+        <h1>第八章 第一節（上）：結界彼端 · 神之哀慟</h1>
+        
+        <p>廟堂之內，時間彷彿被那道貫穿維度的銀色光槍釘死，陷入了永恆的凝滯。</p>
+        <p>NOX-3的分支意志雖已退去，但其留下的絕對邏輯性霜氣，仍像一層薄薄的、抹除一切意義的冰殼，覆蓋在南鯤鯓溫潤的場域之上。舊神們熾熱的金紅色神性光暈與這片冰冷殘響相互抵消，在空氣中激盪出無數肉眼不可見的、細微的空間裂痕。左原陣與許婉柔就站立在這「存在定義」的戰場廢墟中心，呼吸之間，盡是兩種極端神性衝撞後留下的、形而上的煙硝。</p>
+        <p>他們剛剛遞交的「人性座標」，如同一枚投入深潭的石子，在這片神性的對峙中擴散開一圈圈漣漪。它既不熾熱也不冰冷，既非邏輯也非混沌，而是以一種全新的、屬於「人」的維度，頑強地存在著。</p>
+        <blockquote>「去吧。你們是地表最後的中介者。」</blockquote>
+        <p>囝仔公的最後神諭仍在耳邊，但未來該往何處？戰場的中心又在哪裡？</p>
+        <p>許婉柔抬起頭，望向那五尊沉默的、承載了五萬年孤獨的古老神祇。她能感覺到，在祂們威嚴的神性外殼之下，某種比悲傷更深沉、比憤怒更無奈的情感正在翻湧。那是一種看著親手栽種的樹木，明知其將迎來風暴，卻必須束手讓其自行面對的、混雜著期盼與痛苦的複雜情感。</p>
+        <p>這份情感，驅使她問出了那個早已超越了好奇，而是關乎所有犧牲與戰鬥之意義的終極問題。</p>
+        <blockquote>「五萬年前……」她的聲音不大，卻清晰地劃破了神域的寂靜，「究竟發生了什麼？」</blockquote>
+        <p>這一問，彷彿觸動了宇宙太初的某個禁忌協議。</p>
+        <p>整個南鯤鯓神域並非顫動，而是被一種來自更高維度的「權柄」強制「校準」了。周遭流轉的龍紋符碼、信徒的祈願絲線、甚至光與暗的邊界，都在一瞬間失去了原有的定義，被一種絕對的、非歐幾里得的幾何邏輯強行重塑。</p>
+        <p>十一道「存在」於焉顯現。</p>
+        <p>祂們並非「降臨」，而是從空間本身的結構中「浮現」，彷彿祂們一直都在，只是此刻才收回了遮蔽自身的帷幕。祂們的形體在純粹的光學結晶與模擬的人形之間不斷變換，身上覆蓋的不是鎧甲，而是層層疊疊、自我證成的「因果律結晶」。</p>
+        <p>左原陣的「重熾核」在一瞬間被壓制到近乎熄滅，所有科技植入體在發出亂碼警告後徹底沉默。許婉柔的「神性共感」第一次撞上了一堵無法穿透、無法解析的、絕對冰冷的牆壁——那是一種純粹的、不帶任何情感的、如同宇宙背景輻射般古老的意志。</p>
+        <p>神域觀測者。</p>
+        <p>為首的觀測者，普雷歐，其形體穩定在一座完美的十二面體，每一面都映照著不同的星系生滅。祂的聲音並非透過空氣，而是直接在現實的底層邏輯上震動，讓每一個聽到的人都無法質疑其真實性。</p>
+        <blockquote>「我們沒有離開。」</blockquote>
+        <p>那冰冷的意志陳述道，每一個字都像一顆恆星的死亡，沉重而空洞。</p>
+        <blockquote>「是我們，被迫放棄了這顆星球。」</blockquote>
+
+        <footer>
+            <nav class="nav">
+                <a href="index.html">【 目錄 】</a>
+                <a href="chapter_07_sec_06_part2.html">【 上一篇 】</a>
+                <a href="chapter_08_sec_01_part2.html">【 下一篇 】</a>
+            </nav>
+        </footer>
+    </div>
+    <div class="theme-switcher">
+        <button id="theme-default" title="預設模式">☀️</button>
+        <button id="theme-dark" title="夜間模式">🌙</button>
+        <button id="theme-immersive" title="沉浸模式">📖</button>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const body = document.body;
+        const themeDefaultBtn = document.getElementById('theme-default');
+        const themeDarkBtn = document.getElementById('theme-dark');
+        const themeImmersiveBtn = document.getElementById('theme-immersive');
+        const buttons = [themeDefaultBtn, themeDarkBtn, themeImmersiveBtn];
+        const setTheme = (theme) => {
+            body.classList.remove('dark-mode', 'immersive-mode');
+            if (theme === 'dark') {
+                body.classList.add('dark-mode');
+            } else if (theme === 'immersive') {
+                body.classList.add('immersive-mode');
+            }
+            updateActiveButton(theme);
+            localStorage.setItem('readingTheme', theme);
+        };
+        const updateActiveButton = (theme) => {
+            buttons.forEach(button => button.classList.remove('active'));
+            if (theme === 'dark') {
+                themeDarkBtn.classList.add('active');
+            } else if (theme === 'immersive') {
+                themeImmersiveBtn.classList.add('active');
+            } else {
+                themeDefaultBtn.classList.add('active');
+            }
+        };
+        themeDefaultBtn.addEventListener('click', () => setTheme('default'));
+        themeDarkBtn.addEventListener('click', () => setTheme('dark'));
+        themeImmersiveBtn.addEventListener('click', () => setTheme('immersive'));
+        const savedTheme = localStorage.getItem('readingTheme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            setTheme('default');
+        }
+    });
+    </script>
+</body>
+</html>

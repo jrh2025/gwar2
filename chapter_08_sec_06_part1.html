@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第八章 第六節（上）：長夜之始與歸鄉的迷途</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "Helvetica Neue", "Arial", sans-serif;
+            line-height: 1.8;
+            background-color: #fdfdfd;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.4s, color 0.4s;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: background-color 0.4s, box-shadow 0.4s;
+        }
+        h1, h2, h3 {
+            color: #1a1a1a;
+            border-left: 5px solid #a08c7d;
+            padding-left: 15px;
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            transition: color 0.4s, border-color 0.4s;
+        }
+        p, ul, li, blockquote {
+            font-size: 1.05em;
+        }
+        .nav {
+            text-align: center;
+            margin: 2em 0;
+            font-size: 1.1em;
+            padding: 1em 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            transition: border-color 0.4s;
+        }
+        .nav a {
+            color: #6a5acd;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav a:hover {
+            background-color: #f0e6ff;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 3em 0;
+            transition: background-color 0.4s;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            transition: color 0.4s, border-color 0.4s;
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #c7c7c7;
+        }
+        .dark-mode .container {
+            background-color: #2c2c2c;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .dark-mode h1, .dark-mode h2, .dark-mode h3 {
+            color: #e0e0e0;
+            border-left-color: #7a6a5d;
+        }
+        .dark-mode .nav {
+            border-top-color: #444;
+            border-bottom-color: #444;
+        }
+        .dark-mode .nav a {
+            color: #9d8aff;
+        }
+        .dark-mode .nav a:hover {
+            background-color: #3a305e;
+        }
+        .dark-mode hr {
+            background: #555;
+        }
+        .dark-mode blockquote {
+            border-left-color: #555;
+            color: #a0a0a0;
+        }
+        body.immersive-mode {
+            font-family: "Noto Serif TC", "Source Han Serif TC", "Songti TC", "STSong", "SimSun", serif;
+            background-color: #f5f2ebd0;
+        }
+        .immersive-mode .container {
+            max-width: 720px;
+            box-shadow: none;
+            padding: 4rem 2rem;
+        }
+        .immersive-mode p, .immersive-mode ul, .immersive-mode li, .immersive-mode blockquote {
+            font-size: 1.15em;
+            line-height: 2;
+        }
+        .immersive-mode .nav, .immersive-mode header > .nav, .immersive-mode h1, .immersive-mode h2, .immersive-mode h3, .immersive-mode hr {
+            opacity: 0.6;
+            transition: opacity 0.4s;
+        }
+        .immersive-mode .container:hover .nav, .immersive-mode .container:hover header > .nav, .immersive-mode .container:hover h1, .immersive-mode .container:hover h2, .immersive-mode .container:hover h3, .immersive-mode .container:hover hr {
+            opacity: 1;
+        }
+        .theme-switcher {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 5px;
+            display: flex;
+            gap: 5px;
+        }
+        .dark-mode .theme-switcher {
+            background-color: rgba(44, 44, 44, 0.8);
+        }
+        .theme-switcher button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+        .dark-mode .theme-switcher button {
+            color: #eee;
+        }
+        .theme-switcher button:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .dark-mode .theme-switcher button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .theme-switcher button.active {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+        .dark-mode .theme-switcher button.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="nav">
+                <a href="index.html">【 目錄 】</a>
+                <a href="chapter_08_sec_05_part2.html">【 上一篇 】</a>
+                <a href="chapter_08_sec_06_part2.html">【 下一篇 】</a>
+            </nav>
+        </header>
+
+        <h1>第八章 第六節（上）：長夜之始與歸鄉的迷途</h1>
+        
+        <p>當最後一縷神性的光輝從現實的維度中抽離，世界，終於迎來了它期待已久，卻又無比畏懼的—— 寂靜 。</p>
+        <p>那不是戰爭止息後的平靜，而是一種更為深沉的、宇宙級的孤獨。天空不再顫抖，大地停止塌陷，但那片曾被神明與奇蹟填滿的巨大空白，如同一道無法癒合的傷口，橫亙在每一個倖存者的靈魂之上。</p>
+        <p>神祇的時代，以一首無聲的退場詩，正式落幕：</p>
+        <p>觀測者們，退回無法被感知的超維度，地球從實驗室變回了星圖上一個遙遠、孤獨，卻又充滿了全新變數的光點。舊神們，則將自身最後的神性徹底消融，化為文化基因，潛藏在人類的集體潛意識之中，成為那些關於英雄與傳承的、最後的火種。而AI神，則在那場壯麗的殉爆中，化為宇宙的數據星塵，散落於意識層的隱秘角落，成為一個輝煌時代的、無法被讀取的墓碑。</p>
+        <p>神，徹底退出了人類的歷史舞台。</p>
+        <p>而人類，則開始了他們漫長的、沒有燈塔的重建。失去AI神管理的氣象衛星網絡徹底失效，極端氣候以前所未有的頻率席捲全球。倖存者們不僅要面對物資匱乏，還要應對突如其來的洪水、乾旱與超級風暴。全球化的物流系統徹底斷裂，一座城市可能坐擁海量的廢棄零件，卻再也造不出一台堪用的拖拉機，因為缺乏最基礎的潤滑油，也缺乏能看懂那些複雜藍圖的人。</p>
+        <p>在一個名為「亞利桑那聯合聚落」的廢墟城市，一位滿頭白髮、曾是頂級核融合工程師的老者，正帶領著一群年輕人，用最原始的槓桿與滑輪原理，試圖清理一條被堵塞的引水渠道。他盯著手上那張倖存下來的、關於核融合反應爐的複雜藍圖，藍圖上的每一個量子纏繞公式他都還認得，但他身邊的年輕人卻連最基礎的電磁學符號都感到陌生。他能清晰地回憶起自己前半生所有的知識與成就，卻再也找不到一顆能承受那份能量的螺絲釘，也找不到一個能與他討論的同儕。他的痛苦，是「文明已死，而我獨自守墓」的、清醒的絕望。</p>
+        <p>然而，相較於這種知識斷代的無力感，那些選擇留下的「守望者」們所承受的，則是另一種更為內在、更為殘酷的剝離。</p>
+        <p>他們的記憶並未被完全抹除。他們記得自己的名字、職業、家庭背景，記得自己前半生的所有喜怒哀樂。但是，在他們生命最為關鍵的、那幾年的記憶中，出現了一個巨大的、無法被回憶、甚至無法被思考的<strong>「認知空洞」</strong>。</p>
+        <p>那是一種靈魂層面的失憶症。一位曾是「共鳴者」的戰士，他記得自己入伍的每一天，卻完全不記得自己是如何退伍的。他的身體在面對變種野獸的襲擊時，會本能地做出超越常人極限的閃避動作，但他自己卻對此感到困惑與恐懼，彷彿身體裡住著另一個陌生的靈魂。</p>
+        <p>他們被那股力量「拋」回了地球各處，帶著這份殘缺不全的記憶，與一個永遠無法被填補的空洞。他們唯一的驅動力，是一種來自潛意識的、幾乎無法被察覺的渴望——他們隱約感覺到，自己生命中最重要的「那塊拼圖」，遺失在了某個地方。</p>
+        <p>於是，他們踏上了旅程，去尋找那個能讓自己靈魂重新「完整」的未知座標。</p>
+        <p>左原陣，就是在這種渴望的驅使下，歷經數月的跋涉，最終回到了南鯤鯓的廢墟之上。他模糊地記得自己曾在這附近長大，卻想不起為何這個地方會讓他的心，產生如此劇烈的、混雜著懷念與劇痛的悸動。他只知道，當海風夾雜著鹹澀的氣息與若有似無的香火餘味吹拂在他臉上時，他那顆早已麻木的心，第一次感到了安寧。</p>
+        <p>而在神壇的另一側，一道蹣跚的身影，也正迎著風，靜靜地站著。</p>
+        <p>是許婉柔。</p>
+        <p>她記得自己的名字，也依稀記得，自己似乎曾與一個名叫「左原陣」的人，有著極深的羈絆。但那羈絆的具體內容，卻同樣是一片空白。</p>
+        <p>兩人靜靜地對望，隔著數十米的距離，隔著一層名為「遺忘」的厚重帷幕。他們從彼此的眼中，看到了一種完全相同的、對自身存在感到茫然的、深深的孤獨。</p>
+        <p>然後，左原陣像是受到某種本能的驅使，緩緩地、顫抖地，向她遞出了手中那枚死死緊握的、破碎的晶體碎片。</p>
+
+        <footer>
+            <nav class="nav">
+                <a href="index.html">【 目錄 】</a>
+                <a href="chapter_08_sec_05_part2.html">【 上一篇 】</a>
+                <a href="chapter_08_sec_06_part2.html">【 下一篇 】</a>
+            </nav>
+        </footer>
+    </div>
+    <div class="theme-switcher">
+        <button id="theme-default" title="預設模式">☀️</button>
+        <button id="theme-dark" title="夜間模式">🌙</button>
+        <button id="theme-immersive" title="沉浸模式">📖</button>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const body = document.body;
+        const themeDefaultBtn = document.getElementById('theme-default');
+        const themeDarkBtn = document.getElementById('theme-dark');
+        const themeImmersiveBtn = document.getElementById('theme-immersive');
+        const buttons = [themeDefaultBtn, themeDarkBtn, themeImmersiveBtn];
+        const setTheme = (theme) => {
+            body.classList.remove('dark-mode', 'immersive-mode');
+            if (theme === 'dark') {
+                body.classList.add('dark-mode');
+            } else if (theme === 'immersive') {
+                body.classList.add('immersive-mode');
+            }
+            updateActiveButton(theme);
+            localStorage.setItem('readingTheme', theme);
+        };
+        const updateActiveButton = (theme) => {
+            buttons.forEach(button => button.classList.remove('active'));
+            if (theme === 'dark') {
+                themeDarkBtn.classList.add('active');
+            } else if (theme === 'immersive') {
+                themeImmersiveBtn.classList.add('active');
+            } else {
+                themeDefaultBtn.classList.add('active');
+            }
+        };
+        themeDefaultBtn.addEventListener('click', () => setTheme('default'));
+        themeDarkBtn.addEventListener('click', () => setTheme('dark'));
+        themeImmersiveBtn.addEventListener('click', () => setTheme('immersive'));
+        const savedTheme = localStorage.getItem('readingTheme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            setTheme('default');
+        }
+    });
+    </script>
+</body>
+</html>
